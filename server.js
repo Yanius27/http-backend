@@ -56,7 +56,7 @@ app.use((ctx, next) => {
 
 app.use((ctx, next) => {
 
-  if (ctx.request.method == 'POST' && ctx.request.url.includes('method=createTicket')) {
+  if (ctx.request.method === 'POST' && ctx.request.url.includes('method=createTicket')) {
 
     ctx.response.set('Access-Control-Allow-Origin', '*');
 
@@ -88,7 +88,7 @@ app.use((ctx, next) => {
 
 app.use((ctx, next) => {
 
-  if (ctx.request.method == 'POST' && ctx.request.url.includes('method=updateById')) {
+  if (ctx.request.method === 'POST' && ctx.request.url.includes('method=updateById')) {
 
     ctx.response.set('Access-Control-Allow-Origin', '*');
   
@@ -138,7 +138,7 @@ app.use((ctx, next) => {
 
 app.use((ctx, next) => {
 
-  if (ctx.request.method == 'GET' && ctx.request.url.includes('method=ticketById')) {
+  if (ctx.request.method === 'GET' && ctx.request.url.includes('method=ticketById')) {
 
     ctx.response.set('Access-Control-Allow-Origin', '*');
 
@@ -161,7 +161,7 @@ app.use((ctx, next) => {
 
 
 app.use((ctx) => {
-  if (ctx.request.method = 'GET' && ctx.request.url.includes('method=deleteById')) {
+  if (ctx.request.method === 'GET' && ctx.request.url.includes('method=deleteById')) {
     ctx.response.set('Access-Control-Allow-Origin', '*');
 
     const { id } = ctx.request.query;
